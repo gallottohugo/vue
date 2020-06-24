@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  		<title>My first Vue app</title>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		  
+	</head>
+	<body>
+  		<div id="app">
+    		{{ message }}
+		</div>
+		<br/>
+
+
+		<div id="app-2">
+			<span v-bind:title="message">
+			  	Hover your mouse over me for a few seconds
+			  	to see my dynamically bound title!
+			</span>
+		</div>
+		<br/>
+
+
+		<div id="app-if">
+			<span v-if="seen">Now you see me</span>
+		</div>
+		<br/>
+
+
+
+		<div id="app-for">
+			<ol>
+			  	<li v-for="element in elements">
+					{{ element.text }}
+			  	</li>
+			</ol>
+		</div>
+		<br/>
+		
+
+		<div id="app-on-click">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+        </div>
+		<br/>
+
+
+		<div id="app-model">
+			<p>{{ message }}</p>
+			<input v-model="initialValue1">
+			<br/>
+			<input v-model="initialValue2">
+			<br/>
+			<input v-model="initialValue3">
+		</div>
+		<br/>
+
+
+
+		<div id="app-component">
+			<ol>
+                <todo-item
+                    v-for="item in componentList"
+                    v-bind:todo="item"
+                    v-bind:key="item.id">
+               </todo-item>
+            </ol>
+		</div>
+		<br/>
+
+		  
+
+		<script src="index.js"></script>
+	</body>
+</html>
